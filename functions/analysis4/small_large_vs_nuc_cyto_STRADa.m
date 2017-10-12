@@ -7,7 +7,9 @@ function fun(ResultTable, Data, resolution, special)
   geminin_channel = find(ismember(channels, 'Geminin'));
   DAPI = ResultTable.NInt(:,DAPI_channel);
   geminin = ResultTable.NInt(:,geminin_channel);
-  cell_mass = ResultTable.NInt(:,cell_mass_channel);
+  cell_mass = ResultTable.CInt(:,cell_mass_channel);
+  nuc_mass = ResultTable.NInt(:,cell_mass_channel);
+  cyto_mass = cell_mass - nuc_mass;
   cell_size = ResultTable.CArea(:);
   nuc_size = ResultTable.NArea(:);
   cyto_size = cell_size - nuc_size;
@@ -79,7 +81,7 @@ function fun(ResultTable, Data, resolution, special)
   
 
 
-  figure
+  figure('Position',[680   475   784   623]);
   hold on
   idx = isfinite(cell_size_EG1) & isfinite(STRADa_ratio_EG1);
   h=plot(cell_size_EG1(idx),STRADa_ratio_EG1(idx),'.','color',[154/255 213/255 142/255]);
@@ -112,13 +114,13 @@ function fun(ResultTable, Data, resolution, special)
   legend({'EG1','LG1','S','G2','EG1','LG1','S','G2'});
   title('Cell Size (area) vs STRADa localization ratio')
   xlabel('Cell Size (area)');
-  ylabel('<- More STRADa in Cytoplasm                              Ratio                              More STRADa in Nucleus ->');
+  ylabel('<- More STRADa in Cytoplasm         Ratio         More STRADa in Nucleus ->');
   axis tight
   filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 4/size-vs-ratio.png');
-  export_fig(filename, '-m1')
+  export_fig(filename, '-m2')
   
 
-  figure
+  figure('Position',[680   475   784   623]);
   hold on
   idx = isfinite(cell_mass_EG1) & isfinite(STRADa_ratio_EG1);
   h=plot(cell_mass_EG1(idx),STRADa_ratio_EG1(idx),'.','color',[154/255 213/255 142/255]);
@@ -151,11 +153,11 @@ function fun(ResultTable, Data, resolution, special)
   legend({'EG1','LG1','S','G2','EG1','LG1','S','G2'});
   title('Cell Mass (SE) vs STRADa localization ratio')
   xlabel('Cell Mass (SE)');
-  ylabel('<- More STRADa in Cytoplasm                              Ratio                              More STRADa in Nucleus ->');
+  ylabel('<- More STRADa in Cytoplasm         Ratio         More STRADa in Nucleus ->');
   axis tight
 
   filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 4/mass-vs-ratio.png');
-  export_fig(filename, '-m1')
+  export_fig(filename, '-m2')
 
   
   figure
@@ -175,5 +177,5 @@ function fun(ResultTable, Data, resolution, special)
   b = gca; legend(b,'off');
 
   filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 4/size-vs-mass.png');
-  export_fig(filename, '-m1')
+  export_fig(filename, '-m2')
 end

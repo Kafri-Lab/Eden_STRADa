@@ -75,22 +75,6 @@ function fun(ResultTable, Data, resolution, special)
   cell_size_G2_mean = nanmean(cell_size_G2);
 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
   figure('Position',[251,    91,   883,   708]);
   random_cells = round(rand(1,10000)*height(ResultTable));
   for cell_id=random_cells

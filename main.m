@@ -4,8 +4,8 @@ addpath(genpath('functions'));
 load('ResultTable.mat')
 load('SegPar_SegmentationParameters.mat')
 
-%% Analysis 1 and 2
 
+%% Analysis 1 and 2
 % Basics
 basic_stats(ResultTable,Data);
 display_sample_images(ResultTable,Data);
@@ -40,3 +40,9 @@ Show_Selected_Cell_cellcycle(ResultTable,Data,10,'');
 %% Analysis 3
 single_cell_overview(ResultTable,Data)
 
+%% Analysis 4
+small_large_vs_nuc_cyto_STRADa(ResultTable, Data, 10, '')
+
+%% Analysis 5
+mass_vs_STRADa(ResultTable, Data)
+mass_vs_STRADa_binned(ResultTable, Data)
