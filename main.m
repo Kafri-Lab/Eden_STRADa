@@ -38,7 +38,8 @@ Show_Selected_Cell(ResultTable,Data);
 Show_Selected_Cell_cellcycle(ResultTable,Data,10,'');
 
 %% Analysis 3
-single_cell_overview(ResultTable,Data)
+%single_cell_overview(ResultTable,Data)
+single_cell_overview_by_mass(ResultTable,Data)
 
 %% Analysis 4
 small_large_vs_nuc_cyto_STRADa(ResultTable, Data, 10, '')
@@ -46,3 +47,13 @@ small_large_vs_nuc_cyto_STRADa(ResultTable, Data, 10, '')
 %% Analysis 5
 mass_vs_STRADa(ResultTable, Data)
 mass_vs_STRADa_binned(ResultTable, Data)
+
+%% Analysis 6
+mass_vs_STRADa_a6(ResultTable, Data)
+mass_vs_STRADa_binned_a6(ResultTable, Data)
+single_cell_overview_by_ratio(ResultTable,Data)
+single_cell_overview_top_and_bottom(ResultTable,Data)
+
+
+
+

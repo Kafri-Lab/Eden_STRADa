@@ -142,7 +142,7 @@
   ylabel('<- More STRADa in Cytoplasm         Ratio         More STRADa in Nucleus ->');
   axis tight
 
-  filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 5/mass-vs-ratio.png');
+  filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 5 - binned plots/mass-vs-ratio.png');
   export_fig(filename, '-m2 -transparent -nocrop')
 
 
@@ -191,7 +191,7 @@
   ylabel('<- Less STRADa in Nucleus         Ratio         More STRADa in Nucleus ->');
   axis tight
 
-  filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 5/mass-vs-nuc.png');
+  filename = sprintf('Z:/DanielS/Projects/Eden_STRADa/Plots/Analysis 5 - binned plots/mass-vs-nuc.png');
   export_fig(filename, '-m2 -transparent -nocrop')
 
   
